@@ -41,7 +41,7 @@ private String productDescription;
  public String getProductDescription()
  {
 
- return productDescption;
+ return productDescription;
  }
 
 }
