@@ -1,2 +1,3 @@
-# project-shoprite.
+pointmagnificent
+
 class project
