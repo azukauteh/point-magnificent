@@ -1,6 +1,6 @@
 package za.co.pointmagnificent.test;
-import  za.co.pointmagnificent.employee.Cashier;
-import za.co.pointmagnificent.employee.Manager;
+import  za.co.pointmagnificent.employees.Cashier;
+import za.co.pointmagnificent.employees.Manager;
 import za.co.pointmagnificent.tradingStock.Product;
 import za.co.pointmagnificent.sales.Sales;
 import java.util.Scanner;
@@ -11,7 +11,7 @@ public class Application{
 public static void main (String [] args){
 Scanner scanner = new Scanner(System.in);
 Date date = new Date();
-Cashier cashier = new Cashier();
+Cashier cashier1 = new Cashier();
 Manager manager = new Manager();
 Sales sales = new Sales();
 Product product = new Product();
@@ -77,21 +77,21 @@ System.out.println("\t\tPLEASE FILL-IN YOUR DETAILS BELOW TO CONTINUE AS CASHIER
                   scanner.nextLine();
 
 System.out.println("ENTER NAME:");
-String name = scanner.nextLine();
+cashier1.name = scanner.nextLine();
 
 System.out.println("ENTER SURNAME:");
-String Surname = scanner.nextLine();
+cashier1.surname = scanner.nextLine();
 
 System.out.println("ENTER GENDER:");
-String Gender = scanner.nextLine();
+cashier1.gender = scanner.nextLine();
 
 System.out.println("ENTER ADDRESS:");
-String Address = scanner.nextLine();
+cashier1.address = scanner.nextLine();
 
 
 
 System.out.println("ENTER EMAIL:");
-String Email = scanner.nextLine();
+cashier1.email = scanner.nextLine();
 
 
 
@@ -101,12 +101,12 @@ String New = scanner.nextLine();
 
 
 System.out.println("ENTER TELEPHONE:");
-long telephone = scanner.nextLong();
+cashier1.telephoneNumber = scanner.nextLong();
 
 
 
 System.out.println("ENTER ID NUMBER;");
-long id = scanner.nextLong();
+cashier1.idNumber = scanner.nextLong();
 
 scanner.nextLine();
 
@@ -133,13 +133,13 @@ System.out.println("\t\t\t\t\t\tPLEASE CONFIRM YOUR DETAILS  TO CONTINUE....");
   
 scanner.nextLine();
 
-System.out.println("ENTER NAME :" + Name);
-System.out.println("ENTER SURNAME :" + Surname);
-System.out.println("ENTER GENDER :" + Gender);
-System.out.println("ENTER ADDRESS :" + Address);
-System.out.println("ENTER EMAIL@ :" + Email);
-System.out.println("ENTER TELEPHONE :" + telephone); 
-System.out.println("ENTER ID NUMBER :" + id);
+System.out.println("ENTER NAME :" + cashier1.name);
+System.out.println("ENTER SURNAME :" + cashier1.surname);
+System.out.println("ENTER GENDER :" + cashier1.gender);
+System.out.println("ENTER ADDRESS :" + cahsier1.address);
+System.out.println("ENTER EMAIL@ :" + cashier1.email);
+System.out.println("ENTER TELEPHONE :" + cashier1.telephoneNumber); 
+System.out.println("ENTER ID NUMBER :" + cashier1.idNumber);
 //System.out.println("PRETORIA:" + Pretoria);
 System.out.println("ENTER  NEW USERNAME :" + New);
 System.out.println("ENTER PASSWORD : **********");
@@ -242,24 +242,31 @@ int press = scanner.nextInt();
 if(press ==1){
 	System.out.println("Enter Barcode");
         long bc1 = scanner.nextLong();
+	System.out.print("Enter the quantity of products you want to purchase: ");
+ 	p1.quantity=scanner.nextInt();
+	
 
  if(bc1 == p1.barcode){
  System.out.println(p1.productDescription + "R" + p1.retailPrice*p1.quantity);
  inventories[0]=null;
 }
+
 else if (bc1 == p2.barcode){
 System.out.println(p2.productDescription + "R" + p2.retailPrice*p2.quantity);
 inventories[1]=null;
 }
 
 else if(bc1 == p3.barcode){
-System.out.println(p3.productDescription + "R" + p3.retailPrice*p2.quantity);
+System.out.println(p3.productDescription + "R" + p3.retailPrice*p3.quantity);
 inventories[2]=null;
 }
+
 System.out.println("..........................");
         
 System.out.println("Enter Barcode");
         long bc2 = scanner.nextLong();
+	System.out.print("Enter the quantity of products you want to purchase: ");
+	p2.quantity=scanner.nextInt();
 
  if(bc2 == p1.barcode){
  System.out.println(p1.productDescription + "R" + p1.retailPrice*p1.quantity);
@@ -279,6 +286,8 @@ System.out.println("..........................");
         
 System.out.println("Enter Barcode");
         long bc3 = scanner.nextLong();
+	System.out.print("Enter the quantity of products you want to purchase: ");
+	p3.quantity=scanner.nextInt();
 
  if(bc3 == p1.barcode){
  System.out.println(p1.productDescription + "R" + p1.retailPrice*p1.quantity);
@@ -299,10 +308,29 @@ System.out.println(sales.total);
 
 System.out.println("..........................");
 
-System.out.print("DO TO YOU WANT TO VOID AN ITEM? PRESS 2 TO VOID: ");
-int 
+System.out.print("DO TO YOU WANT TO VOID AN ITEM? PRESS 2 TO VOID OR 3 TO CONTINUE: ");
+int option2=scanner.nextInt();
+	if(option2==2){
+	System.out.print("ENTER BARCODE OF ITEM YOU WISH TO VOID: ");
+	long vd=scanner.nextLong();
+	if(vd==p1.barcode){
+	sales.total=p2.retailPrice*p2.quantity + p3.retailPrice*p3.quantity;
+	sales.vat=p2.retailPrice*p2.quantity*0.15;
+	inventories[0]=p1;
+	}
+	else if(vd==p2.barcode){
+	sales.total=p1.retailPrice*p1.quantity + p3.retailPrice*p3.quantity;
+	sales.vat=p1.retailPrice*p1.quantity*0.15;
+	inventories[1]=p2;
+	}
+	else if(vd==p3.barcode){
+	sales.total=p1.retailPrice*p1.quantity + p3.retailPrice*p3.quantity;
+	sales.vat=p1.retailPrice*p1.quantity*0.15+p3.retailPrice*p3.quantity*0.15;
+	inventories[2]=p3;
+	}
+}
 
-System.out.println("enter cash amount");
+System.out.println("enter cash amount: ");
 sales.cash=scanner.nextDouble();
 
 
