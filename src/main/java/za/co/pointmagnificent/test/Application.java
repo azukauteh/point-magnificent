@@ -23,25 +23,25 @@ inventories[1]=p2;
 inventories[2]=p3;
 
 p1.retailPrice=49.99;
-p1.timeManufactured=09.50;
-p1.dateManufactured="3 June 2019";
-p1.bestBefore="16 July 2019";
+p1.timeManufactured=0.0;
+p1.dateManufactured=null;
+p1.bestBefore=null;
 p1.barcode=123;
 p1.productDescription="Eggs ritebrand 30 large";
 
 
 p2.retailPrice=14.99;
-p2.timeManufactured=09.50;
-p2.dateManufactured="3 June 2019";
-p2.bestBefore="9 June 2019";
+p2.timeManufactured=0.0;
+p2.dateManufactured=null;
+p2.bestBefore=null;
 p2.barcode=1234;
 p2.productDescription="Milk ritebrand 1 LITRE full cream";
 
 
 p3.retailPrice=13.99;
-p3.timeManufactured=09.50;
-p3.dateManufactured="3 June 2019";
-p3.bestBefore="10 June 2019";
+p3.timeManufactured=0.0;
+p3.dateManufactured=null;
+p3.bestBefore=null;
 p3.barcode=12345;
 p3.productDescription="Bread Albany Brown 600g";
 
