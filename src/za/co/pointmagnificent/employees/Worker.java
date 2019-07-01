@@ -1,4 +1,4 @@
-//package za.co.pointmagnificent.employee;
+package za.co.pointmagnificent.employees;
 
   public abstract class Worker{
 
@@ -6,11 +6,11 @@
     private String surname;
     private String gender;
     private String dateOfBirth;
-    private int phoneNumber;
+    private int telephoneNumber;
     private long idNumber;
     private String email;    
     private long employeeNumber;
-
+   
 
     public void setName(String name){
         this.name = name;
@@ -88,5 +88,3 @@ public void cancelProduct(){
 
 
 }
-
-

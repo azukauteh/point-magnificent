@@ -1,4 +1,4 @@
-//package za.co.pointmagnificent.employee;
+package za.co.pointmagnificent.employees;
  
 public class Manager extends Worker{
 
@@ -16,10 +16,3 @@ public void recievePayement(){
 
 
 }
-
-
-
-
-
-
- 

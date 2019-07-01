@@ -1,4 +1,4 @@
-package za.co.shoprite.tradingStock;
+package za.co.pointmagnificent.tradingStock;
 
 public class Inventory
 {

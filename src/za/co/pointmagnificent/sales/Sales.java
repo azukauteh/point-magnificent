@@ -1,4 +1,4 @@
-package za.co.shoprite.sales;
+package za.co.pointmagnificent.sales;
 
 
 public class Sales{
